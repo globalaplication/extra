@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 
 def CutString(line, ref, end='</div>'):
@@ -21,3 +20,9 @@ def StringCount(line, string):
     for chr in range(0, len(line), +1):
         if (line[chr:chr+len(string)] is string and line[chr+1:chr+1+len(string)] is ' '): count = count + 1
     return count
+def StringReplaceAll(string, old, new):
+    newText = ''
+    for chr in string.split(' '):
+        if chr == old: newText = newText + new + ' '
+        else: newText = newText + chr + ' '
+    return newText
