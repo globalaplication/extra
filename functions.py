@@ -31,5 +31,6 @@ def StringReplaceAll(string, old, new):
         else: newText = newText + chr + ' '
     return newText
 """string = 'test beta deneme beta'
+print(StringCount(line, 'beta'))
 print(StringReplaceAll(string, 'beta', 'replace' ))
 """
