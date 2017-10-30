@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 def CutString(line, ref, end='</div>'):
     if (ref == 'a href') : 
@@ -7,6 +7,9 @@ def CutString(line, ref, end='</div>'):
     if (ref == 'img') : 
         ref = '<' + ref
         end = '</img>'
+    if (ref == 'span'):
+        ref = '<' + ref
+        end = '</span>'
     try:
         if line.find(ref) > -1:
             for chr in range(line.find(ref), len(line), +1):
