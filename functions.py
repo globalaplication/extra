@@ -13,8 +13,8 @@ def CutString(line, ref, end='</div>'):
     try:
         if line.find(ref) > -1:
             for chr in range(line.find(ref), len(line), +1):
-                if (line[chr:chr+len(ref)] is ref):
-                    line = line.replace(line[chr:line.find(end, chr)+len(end)], '')
+                if (line[chr:chr+len(ref)] == ref):
+                    line = line.replace(line[chr:line.find(end, chr)+len(end)], ' ')
         return line.strip()
     except:
         pass
@@ -24,13 +24,13 @@ def StringCount(line, string):
         if line[chr:chr+len(string)] == string and line[chr:chr+len(string)+1] == string + ' ': 
             count = count + 1
     return count
-def StringReplaceAll(string, old, new):
-    newText = ''
+def StringReplaceAll(string, old, new, newText=''):
     for chr in string.split(' '):
         if chr == old: newText = newText + new + ' '
         else: newText = newText + chr + ' '
     return newText
-"""string = 'test beta deneme beta'
-print(StringCount(line, 'beta'))
-print(StringReplaceAll(string, 'beta', 'replace' ))
 """
+line = 'test beta beta deneme <title> bu bir başlıktır </title> '
+print(CutString(line, '<title>', '</title>'))
+print(StringCount(line, 'beta'))
+print(StringReplaceAll(line, 'beta', 'replace' ))"""
