@@ -30,3 +30,6 @@ def StringReplaceAll(string, old, new):
         if chr == old: newText = newText + new + ' '
         else: newText = newText + chr + ' '
     return newText
+
+string = 'test beta deneme beta'
+print(StringReplaceAll(string, 'beta', 'replace' ))
