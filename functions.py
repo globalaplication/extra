@@ -24,13 +24,22 @@ def StringCount(line, string):
         if line[chr:chr+len(string)] == string and line[chr:chr+len(string)+1] == string + ' ': 
             count = count + 1
     return count
+def GetCut(line, ref, end='</div>'):
+    for ch in range(len(line), -1, -1):
+        if line[ch:ch+len(ref)] == ref:
+            return line[ch+len(ref):len(line)-len(end)-1]
 def StringReplaceAll(string, old, new, newText=''):
     for chr in string.split(' '):
         if chr == old: newText = newText + new + ' '
         else: newText = newText + chr + ' '
     return newText
-"""
+
 line = 'test beta beta deneme <title> bu bir başlıktır </title> '
-print(CutString(line, '<title>', '</title>'))
-print(StringCount(line, 'beta'))
-print(StringReplaceAll(line, 'beta', 'replace' ))"""
+
+print('CutString', CutString(line, '<title>', '</title>'))
+
+print('StringCount', StringCount(line, 'beta'))
+
+print('StringReplaceAll', StringReplaceAll(line, 'beta', 'replace' ))
+
+print('GetCut', GetCut(line, '<title>', '</title>'))
