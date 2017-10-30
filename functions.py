@@ -34,6 +34,7 @@ def StringReplaceAll(string, old, new, newText=''):
         else: newText = newText + chr + ' '
     return newText
 
+"""
 line = 'test beta beta deneme <title> bu bir başlıktır </title> '
 
 print('CutString', CutString(line, '<title>', '</title>'))
@@ -42,4 +43,4 @@ print('StringCount', StringCount(line, 'beta'))
 
 print('StringReplaceAll', StringReplaceAll(line, 'beta', 'replace' ))
 
-print('GetCut', GetCut(line, '<title>', '</title>'))
+print('GetCut', GetCut(line, '<title>', '</title>'))"""
